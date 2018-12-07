@@ -6,8 +6,9 @@ import { StoreModule } from "@ngrx/store";
 import { AppComponent } from "./app.component";
 import { SearchComponent } from "./components/search/search.component";
 import { HttpClientModule } from "@angular/common/http";
-import { SearchService, SearchReducer } from "./components/search";
-import { SearchResultComponent } from './components/search/search-result/search-result.component';
+import { SearchService } from "./components/search";
+import { SearchResultComponent } from "./components/search/search-result/search-result.component";
+import { actionReducerMap } from "./store";
 
 @NgModule({
   declarations: [AppComponent, SearchComponent, SearchResultComponent],
@@ -15,7 +16,7 @@ import { SearchResultComponent } from './components/search/search-result/search-
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    StoreModule.forRoot({ searchResults: SearchReducer })
+    StoreModule.forRoot(actionReducerMap)
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]

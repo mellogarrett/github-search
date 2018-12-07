@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { Store, select } from "@ngrx/store";
-import { RepositorySearchResponseItem } from "../search.actions";
+import { RepositorySearchResponseItem } from "../../../models";
 
 @Component({
   selector: "app-search-result",
@@ -14,7 +14,7 @@ export class SearchResultComponent implements OnInit {
 
   constructor(private readonly store: Store<{}>) {
     this.repoNames$ = store.pipe(
-      select("searchResults"),
+      select("search"),
       map(({ searchResults }) =>
         searchResults
           ? searchResults.items.map(

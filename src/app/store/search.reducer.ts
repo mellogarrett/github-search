@@ -1,4 +1,9 @@
 import { ActionTypes, ActionsUnion } from "./search.actions";
+import { RepositorySearchResponse } from "../models";
+
+export interface SearchState {
+  searchResults: RepositorySearchResponse | undefined;
+}
 
 export const initialState = {
   searchResults: undefined

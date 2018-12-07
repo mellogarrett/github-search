@@ -2,7 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
 import { SearchService } from "./search.service";
-import { SetSearchResults, RepositorySearchResponse } from "./search.actions";
+import { SetSearchResults } from "../../store/search.actions";
+import { RepositorySearchResponse } from "../../models";
 
 @Component({
   selector: "app-search",
