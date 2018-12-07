@@ -1,0 +1,13 @@
+.search-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.search-controls {
+  display: flex;
+  justify-content: center;
+}
+.search-result {
+  list-style: none;
+}

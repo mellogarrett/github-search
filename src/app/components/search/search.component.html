@@ -1,0 +1,14 @@
+<div class="search-container">
+  <h2>Github Search</h2>
+  <div class="search-controls">
+    <input (keyup.enter)="search()" [(ngModel)]="searchString" placeholder="Search phrase">
+    <button (click)="search()" >Search</button>
+  </div>
+  <div *ngIf="repoNames$ | async">
+    <ul style="padding-left: 0">
+      <li *ngFor="let result of (repoNames$ | async)" class="search-result">
+        {{ result }}
+      </li>
+    </ul>
+  </div>
+</div>
