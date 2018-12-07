@@ -7,9 +7,10 @@ import { AppComponent } from "./app.component";
 import { SearchComponent } from "./components/search/search.component";
 import { HttpClientModule } from "@angular/common/http";
 import { SearchService, SearchReducer } from "./components/search";
+import { SearchResultComponent } from './components/search/search-result/search-result.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchComponent],
+  declarations: [AppComponent, SearchComponent, SearchResultComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

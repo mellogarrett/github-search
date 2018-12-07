@@ -1,0 +1,7 @@
+<div *ngIf="repoNames$ | async">
+    <ul style="padding-left: 0">
+      <li *ngFor="let result of (repoNames$ | async)" class="search-result">
+        {{ result }}
+      </li>
+    </ul>
+  </div>

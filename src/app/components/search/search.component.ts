@@ -1,13 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { Store, select } from "@ngrx/store";
+import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
-import { map } from "rxjs/operators";
 import { SearchService } from "./search.service";
-import {
-  SetSearchResults,
-  RepositorySearchResponse,
-  RepositorySearchResponseItem
-} from "./search.actions";
+import { SetSearchResults, RepositorySearchResponse } from "./search.actions";
 
 @Component({
   selector: "app-search",
@@ -20,19 +15,8 @@ export class SearchComponent implements OnInit {
 
   constructor(
     private readonly searchService: SearchService,
-    private readonly store: Store<{ searchResults: object[] }>
-  ) {
-    this.repoNames$ = store.pipe(
-      select("searchResults"),
-      map(({ searchResults }) =>
-        searchResults
-          ? searchResults.items.map(
-              (each: RepositorySearchResponseItem) => each.full_name
-            )
-          : undefined
-      )
-    );
-  }
+    private readonly store: Store<{}>
+  ) {}
 
   ngOnInit() {}
 

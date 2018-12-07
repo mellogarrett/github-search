@@ -11,7 +11,6 @@ export class SearchService {
   }
 
   searchRepositories(searchString) {
-    console.log("test");
     return this.http.get(
       `${this.url}/search/repositories?q=${searchString}&page=1&per_page=10`
     );
